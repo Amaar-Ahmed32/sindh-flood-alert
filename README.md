@@ -13,7 +13,7 @@ This system provides **hyperlocal, real-time early warnings**, computes scientif
 
 ---
 
-## 🏗️ Architecture & Technology Stack
+ Architecture & Technology Stack
 
 | Tier | Technology | Description |
 |---|---|---|
@@ -27,11 +27,11 @@ This system provides **hyperlocal, real-time early warnings**, computes scientif
 
 ---
 
-## 📊 Scientific Risk Scoring Logic (`server/services/riskScore.js`)
+ 📊 Scientific Risk Scoring Logic (`server/services/riskScore.js`)
 
 The core scoring engine is located in `server/services/riskScore.js` and uses transparent, student-explainable thresholds.
 
-### 1. Heatwave Risk Calculation (`calculateHeatwaveRisk`)
+ 1. Heatwave Risk Calculation (`calculateHeatwaveRisk`)
 Driven primarily by the **Heat Index (Apparent Temperature)**, which combines temperature and relative humidity (critical for coastal humidity in Karachi and dry heat in Jacobabad):
 
 | Effective Heat Index (°C) | Risk Level | Score Range | Status & Guidance |
@@ -45,7 +45,7 @@ Driven primarily by the **Heat Index (Apparent Temperature)**, which combines te
 
 ---
 
-### 2. Flood Risk Calculation (`calculateFloodRisk`)
+ 2. Flood Risk Calculation (`calculateFloodRisk`)
 Accounts for both pluvial (rainfall) and riverine (Indus discharge) flooding:
 
 - **24-Hour Precipitation Thresholds:**
@@ -109,7 +109,7 @@ Accounts for both pluvial (rainfall) and riverine (Indus discharge) flooding:
 
 ---
 
-## 🌐 Multilingual & RTL Implementation
+ Multilingual & RTL Implementation
 - Built using `react-i18next` with JSON dictionaries for:
   - English (`en.json`) - LTR
   - Urdu (`ur.json`) - RTL with `Noto Nastaliq Urdu` typography
@@ -119,7 +119,7 @@ Accounts for both pluvial (rainfall) and riverine (Indus discharge) flooding:
 
 ---
 
-## 📞 Integrated Sindh Emergency Helplines
+ Integrated Sindh Emergency Helplines
 - **PDMA Sindh 24/7 Control Room:** `1736`
 - **Rescue 1122 Sindh:** `1122`
 - **Edhi Ambulance:** `115`
@@ -128,7 +128,7 @@ Accounts for both pluvial (rainfall) and riverine (Indus discharge) flooding:
 
 ---
 
-## 🏆 Presentation Guide for Competition Judges
+ Presentation Guide for Competition Judges
 
 When presenting to judges:
 1. **The Problem:** Explain how Sindh suffered devastating floods in 2022 and recurrent 50°C heatwaves in Jacobabad and Nawabshah.
