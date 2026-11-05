@@ -1,0 +1,166 @@
+================================================================================
+🌊 SINDH STREAM 2026-27: FLOOD & HEATWAVE EARLY WARNING SYSTEM
+HOW TO RUN LOCALLY, DEMONSTRATE TO JUDGES, AND DEPLOY LIVE ON THE WEB
+================================================================================
+
+PROJECT OVERVIEW:
+This platform is a production-grade MERN application designed for disaster risk
+reduction across all 30 districts of Sindh, Pakistan. It monitors real-time
+floods and heatwaves using Open-Meteo Weather and GloFAS Hydrology models,
+evaluates risk via scientific thresholds, and delivers multilingual advisories
+in English, Urdu (اردو), and Sindhi (سنڌي) with dynamic RTL support.
+
+--------------------------------------------------------------------------------
+PART 1: RUNNING LOCALLY ON YOUR COMPUTER (STUDENT LAPTOP)
+--------------------------------------------------------------------------------
+
+PREREQUISITES:
+- Node.js (v18 or higher) installed on your machine.
+- Optional: MongoDB (if not running, the built-in in-memory fallback engages
+  automatically so the app NEVER crashes!).
+
+STEP 1: OPEN TERMINAL / POWERSHELL
+  cd "sindh-stream-warning"
+
+STEP 2: RUN THE VERIFICATION TEST SUITE
+  npm run test
+  (This validates the risk scoring thresholds for Jacobabad heat & Sukkur flood)
+
+STEP 3: START BOTH BACKEND & FRONTEND WITH ONE COMMAND
+  npm run dev
+
+  What happens:
+  - Backend starts on: http://localhost:5050
+  - Frontend starts on: http://localhost:5173 (or 5174)
+  - Live data automatically synchronizes from Open-Meteo for all 30 Sindh districts.
+
+STEP 4: OPEN IN YOUR BROWSER
+  Open http://localhost:5173 to view the dashboard!
+
+--------------------------------------------------------------------------------
+PART 2: HOW TO DEMONSTRATE TO COMPETITION JUDGES (5-MINUTE WINNING SCRIPT)
+--------------------------------------------------------------------------------
+
+STEP 1: THE PROBLEM (1 Minute)
+  - Tell judges: "Sindh faces catastrophic dual climate risks: the 2022 floods
+    submerged over 70% of the province, while Jacobabad and Nawabshah regularly
+    exceed 50°C lethal summer heatwaves. Existing warnings are static PDF files.
+    Our solution gives hyperlocal, real-time, multilingual early action."
+
+STEP 2: THE TRILINGUAL ACCESSIBILITY (1 Minute)
+  - In the top right corner, click "اردو" and "سنڌي".
+  - Show how the entire screen dynamically flips to Right-to-Left (RTL) with
+    authentic calligraphy fonts (Noto Nastaliq Urdu and Noto Sans Arabic).
+
+STEP 3: THE SCENARIO SIMULATOR (1.5 Minutes - JUDGE FAVORITE!)
+  - Tell judges: "Because today is a mild day, we built a Disaster Scenario
+    Simulator so you can see how our algorithms react under crisis."
+  - Click "2022 Flood" in the top bar:
+    -> Watch the map immediately light up in RED and ORANGE!
+    -> Sukkur Barrage discharge surges to 5,400 m³/s.
+    -> Dadu, Larkana, and Badin trigger extreme flood advisories.
+  - Click "51°C Heat" in the top bar:
+    -> Jacobabad and Nawabshah trigger Extreme Heatstroke Emergencies.
+
+STEP 4: LAST-MILE COMMUNITY ACTION (1 Minute)
+  - Click on any district card (e.g., Dadu or Jacobabad) to open the Dossier.
+  - Click "🔊 Listen / ٻڌو / سنیں" -> The browser speaks the advisory aloud
+    (essential for rural farmers who cannot read text!).
+  - Click "Share WhatsApp" -> Opens WhatsApp with a pre-formatted emergency alert.
+  - Click the Printer icon -> Generates an official single-page SitRep for the
+    District Commissioner (DC) and PDMA Sindh officers.
+
+STEP 5: DEFENDING "WHAT IF THE DATA IS WRONG?" (30 Seconds)
+  - Explain the 5-Layer Data Integrity Architecture:
+    1. Physical Bounds Clamping (5°C to 55°C, no negative rain).
+    2. Triangulated Scoring (heat = temp + humidity; flood = rain + river flow).
+    3. High-Availability Fallback (Live API -> MongoDB Cache -> Baselines).
+    4. Real-time Data Confidence Score (98% Live verified).
+    5. Local Barrage Gauge Ground-Truth Overrides.
+
+--------------------------------------------------------------------------------
+PART 3: HOW TO TAKE THE PROJECT LIVE ON THE INTERNET (FREE HOSTING)
+--------------------------------------------------------------------------------
+
+You can deploy the complete project to the web for 100% FREE in about 10 minutes
+using MongoDB Atlas (Database), Render/Railway (Backend), and Vercel (Frontend).
+
+--------------------------------------------------------------------------------
+STEP A: FREE MONGODB ATLAS DATABASE (2 Minutes)
+--------------------------------------------------------------------------------
+1. Go to https://www.mongodb.com/cloud/atlas and create a free account.
+2. Click "Create a Deployment" -> Choose "M0 Free Shared Cluster".
+3. Under "Security Quickstart", create a database username and password.
+4. Under "Network Access", add IP address: 0.0.0.0/0 (allow from anywhere).
+5. Click "Connect" -> "Drivers" -> Copy your Connection String, e.g.:
+   mongodb+srv://student:<password>@cluster0.xyz.mongodb.net/sindh_stream_warning?retryWrites=true&w=majority
+
+--------------------------------------------------------------------------------
+STEP B: FREE BACKEND HOSTING ON RENDER (3 Minutes)
+--------------------------------------------------------------------------------
+1. Push your code to a GitHub repository:
+   git init
+   git add .
+   git commit -m "Sindh STREAM 2026-27 Initial Release"
+   git branch -M main
+   git remote add origin https://github.com/<your-username>/sindh-stream-warning.git
+   git push -u origin main
+
+2. Go to https://render.com and sign in with GitHub.
+3. Click "New +" -> "Web Service".
+4. Select your GitHub repository.
+5. Configure the service:
+   - Name: sindh-stream-server
+   - Root Directory: server
+   - Environment: Node
+   - Build Command: npm install
+   - Start Command: node server.js
+   - Plan: Free
+6. Add Environment Variables (under Advanced / Environment):
+   - PORT = 5050
+   - MONGODB_URI = <paste your MongoDB Atlas connection string from Step A>
+   - SYNC_CRON_SCHEDULE = */30 * * * *
+   - CLIENT_URL = *
+7. Click "Deploy Web Service".
+8. Once deployed, Render will give you a public URL, for example:
+   https://sindh-stream-server.onrender.com
+
+--------------------------------------------------------------------------------
+STEP C: FREE FRONTEND HOSTING ON VERCEL (3 Minutes)
+--------------------------------------------------------------------------------
+1. Go to https://vercel.com and sign in with GitHub.
+2. Click "Add New..." -> "Project".
+3. Select your GitHub repository.
+4. In Project Settings:
+   - Root Directory: click Edit and select "client"
+   - Framework Preset: Vite
+   - Build Command: npm run build
+   - Output Directory: dist
+5. Under Environment Variables, add:
+   - VITE_API_URL = https://sindh-stream-server.onrender.com
+6. Click "Deploy".
+7. Vercel will build and give you your live public website URL, for example:
+   https://sindh-stream-warning.vercel.app
+
+--------------------------------------------------------------------------------
+STEP D: VERIFY YOUR LIVE PRODUCTION DEPLOYMENT
+--------------------------------------------------------------------------------
+- Visit your Vercel URL on your phone or laptop.
+- Open the district map, test language switching, test WhatsApp sharing, and
+  test the Scenario Simulator.
+- Your project is now globally accessible to judges, mentors, and the public!
+
+--------------------------------------------------------------------------------
+FILES INCLUDED IN THIS PACKAGE:
+--------------------------------------------------------------------------------
+- /server/               -> Express & Mongoose API backend with Open-Meteo sync
+- /client/               -> React + Vite + Tailwind frontend with i18n & Leaflet map
+- package.json           -> Root runner script (npm run dev)
+- start-both.js          -> Dual process launcher
+- README.md              -> Complete documentation and scientific breakdown
+- HOW_TO_USE_AND_DEPLOY.txt -> This file
+- Sindh_STREAM_2026-27_Early_Warning_System.pptx -> 10-slide PowerPoint presentation
+- sindh-stream-warning.zip -> Clean full zip archive of the entire codebase
+
+Best of luck in the Sindh STREAM 2026-27 Competition!
+================================================================================

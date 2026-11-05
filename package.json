@@ -1,0 +1,22 @@
+{
+  "name": "sindh-stream-2026-27",
+  "version": "1.0.0",
+  "description": "Flood and Heatwave Early Warning System (Sindh STREAM 2026-27)",
+  "scripts": {
+    "start": "node start-both.js",
+    "dev": "node start-both.js",
+    "server": "npm --prefix server start",
+    "client": "npm --prefix client dev",
+    "test": "npm --prefix server test"
+  },
+  "keywords": [
+    "sindh",
+    "disaster-management",
+    "flood-warning",
+    "heatwave-warning",
+    "mern",
+    "stream-2026-27"
+  ],
+  "author": "Sindh STREAM Student Innovators",
+  "license": "MIT"
+}

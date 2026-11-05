@@ -1,0 +1,90 @@
+{
+  "app": {
+    "title": "Sindh STREAM 2026-27",
+    "subtitle": "Disaster Early Warning System: Flood & Heatwave Resilience",
+    "tagline": "Protecting communities across all 30 districts of Sindh with real-time forecasting and hydrology",
+    "refreshBtn": "Refresh Live Data",
+    "refreshing": "Updating Data...",
+    "lastUpdated": "Last Synchronized"
+  },
+  "nav": {
+    "dashboard": "Dashboard",
+    "mapView": "Sindh Risk Map",
+    "districts": "Districts List",
+    "advisories": "Safety Advisories",
+    "emergency": "Helplines (1122)"
+  },
+  "stats": {
+    "monitoredDistricts": "Monitored Districts",
+    "extremeAlerts": "Extreme Risk Alerts",
+    "highAlerts": "High Risk Alerts",
+    "heatAlerts": "Heatwave Warnings",
+    "floodAlerts": "Flood Warnings",
+    "riverStatus": "Indus River Flow",
+    "safeDistricts": "Normal / Low Risk"
+  },
+  "filters": {
+    "searchPlaceholder": "Search district by name (e.g., Karachi, Sukkur, Larkana, Badin)...",
+    "allDistricts": "All Districts",
+    "allHazards": "All Hazards",
+    "heatwaveOnly": "Heatwave Alerts",
+    "floodOnly": "Flood Alerts",
+    "extremeOnly": "Extreme Only",
+    "highOnly": "High Only",
+    "allDivisions": "All Divisions",
+    "sortBy": "Sort By",
+    "riskDesc": "Highest Risk First",
+    "nameAsc": "Alphabetical (A-Z)",
+    "tempDesc": "Highest Temperature",
+    "precipDesc": "Highest Rainfall"
+  },
+  "risk": {
+    "level": "Risk Level",
+    "score": "Risk Index",
+    "LOW": "Low Risk",
+    "MODERATE": "Moderate Risk",
+    "HIGH": "High Risk",
+    "EXTREME": "Extreme Emergency",
+    "heatRisk": "Heatwave Risk",
+    "floodRisk": "Flood Risk",
+    "overallRisk": "Combined Multi-Hazard",
+    "primaryHazard": "Primary Threat",
+    "hazardHeatwave": "Extreme Heatwave",
+    "hazardFlood": "Flood & Inundation",
+    "hazardCompound": "Compound Disaster",
+    "hazardNormal": "Normal Conditions"
+  },
+  "metrics": {
+    "currentTemp": "Temperature",
+    "feelsLike": "Feels Like (Heat Index)",
+    "maxTemp": "Daily Max",
+    "humidity": "Humidity",
+    "windSpeed": "Wind Speed",
+    "rain24h": "24h Rainfall",
+    "rain7d": "7-Day Total Rain",
+    "riverDischarge": "River Discharge",
+    "peakDischarge": "7-Day Peak Discharge",
+    "drainage": "Drainage / Basin"
+  },
+  "modal": {
+    "districtDetails": "District Early Warning Dossier",
+    "forecast7Days": "7-Day Temperature & Rain Forecast",
+    "riverHydrograph": "Indus River Discharge Projection (m³/s)",
+    "actionableAdvisories": "Actionable Safety Advisories",
+    "forPublic": "For Citizens & Communities",
+    "forAuthorities": "For District Administration & PDMA",
+    "close": "Close Dossier"
+  },
+  "emergency": {
+    "bannerTitle": "Sindh Emergency Response Contacts",
+    "pdma": "PDMA Sindh Emergency Cell: 1736",
+    "rescue": "Rescue 1122: 1122",
+    "edhi": "Edhi Ambulance: 115",
+    "chippa": "Chhipa Ambulance: 1020",
+    "met": "Pakistan Met Department (PMD): 021-99261404"
+  },
+  "footer": {
+    "credit": "Developed for Sindh STREAM 2026-27 Competition by Student Innovators.",
+    "dataSource": "Real-time meteorological & hydrological data powered by Open-Meteo APIs (Global GloFAS & ECMWF Models)."
+  }
+}

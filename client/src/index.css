@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base Typography and RTL/LTR rules */
+:root {
+  color-scheme: light;
+}
+
+/* Urdu Typography enhancement */
+body.font-urdu {
+  font-family: 'Noto Nastaliq Urdu', 'Jameel Noori Nastaleeq', serif;
+  line-height: 2.1;
+}
+
+body.font-urdu h1, 
+body.font-urdu h2, 
+body.font-urdu h3, 
+body.font-urdu h4 {
+  line-height: 1.8;
+}
+
+/* Sindhi Typography enhancement */
+body.font-sindhi {
+  font-family: 'Noto Sans Arabic', 'Lateef', serif;
+  line-height: 1.9;
+}
+
+body.font-sindhi h1, 
+body.font-sindhi h2, 
+body.font-sindhi h3, 
+body.font-sindhi h4 {
+  line-height: 1.7;
+}
+
+/* Leaflet map styles fix for Tailwind CSS */
+.leaflet-container {
+  width: 100%;
+  height: 100%;
+  border-radius: 0.75rem;
+}
+
+/* Custom Scrollbar for dossiers */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
